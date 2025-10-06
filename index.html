@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BAF-Szablony maili </title>
+    <title>BAF-Szablony maili</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
         body {
@@ -22,11 +22,10 @@
             border-radius: 12px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.05);
             width: 90%;
-            max-width: 450px;
+            max-width: 500px; /* ZMIANA: Lekko zwiększono szerokość kontenera dla lepszego wyglądu siatki */
         }
         .logo img {
-            /* ZMIANA: Zwiększono logo */
-            max-width: 150px; 
+            max-width: 150px;
             height: auto;
             margin-bottom: 25px;
         }
@@ -36,24 +35,36 @@
             margin-bottom: 35px;
             font-size: 24px;
         }
+
+        /* ZMIANA: Dodano styl dla kontenera siatki */
+        .button-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Tworzy dwie równe kolumny */
+            gap: 15px; /* Definiuje odstęp między kafelkami */
+        }
+
         .menu-button {
-            display: block;
+            /* ZMIANA: Usunięto 'display: block' i 'margin', aby siatka mogła zarządzać układem */
             background-color: transparent;
             color: #3498db;
             border: 2px solid #3498db;
-            padding: 14px 20px;
-            margin: 15px auto;
+            padding: 20px 10px; /* ZMIANA: Dostosowano padding dla kafelków */
             border-radius: 8px;
             cursor: pointer;
             text-decoration: none;
             font-size: 16px;
             font-weight: 600;
             transition: all 0.3s ease;
+            /* ZMIANA: Dodano flexbox, aby idealnie wyśrodkować tekst w kafelku (nawet jeśli jest wieloliniowy) */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 50px; /* Zapewnia równą wysokość kafelków */
         }
         .menu-button:hover {
             background-color: #3498db;
             color: white;
-            transform: translateY(-3px); /* Lekkie uniesienie przycisku */
+            transform: translateY(-3px);
             box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
         }
     </style>
@@ -64,13 +75,13 @@
             <img src="baf_logo.png" alt="Logo BAF">
         </div>
         <h1>Szablony do wysyłania</h1>
-        <a href="refinans.html" class="menu-button">Refinansowanie</a>
-        <a href="gdw.html" class="menu-button">Przygotowanie do wnioskowania</a>
-        <a href="skd.html" class="menu-button">Sankcja Kredytu Darmowego</a>
-        <a href="nowe.html" class="menu-button">Nowe środki</a>
+
+        <div class="button-grid">
+            <a href="refinans.html" class="menu-button">Refinansowanie</a>
+            <a href="gdw.html" class="menu-button">Przygotowanie do wnioskowania</a>
+            <a href="skd.html" class="menu-button">Sankcja Kredytu Darmowego</a>
+            <a href="nowe.html" class="menu-button">Nowe środki</a>
+        </div>
     </div>
 </body>
 </html>
-
-
-
