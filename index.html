@@ -13,7 +13,8 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f0f2f5;
+            /* ZMIANA: Kolor tła został zmieniony */
+            background-color: #000c69;
         }
         .menu-container {
             text-align: center;
@@ -22,7 +23,7 @@
             border-radius: 12px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.05);
             width: 90%;
-            max-width: 500px; /* ZMIANA: Lekko zwiększono szerokość kontenera dla lepszego wyglądu siatki */
+            max-width: 500px;
         }
         .logo img {
             max-width: 150px;
@@ -35,31 +36,26 @@
             margin-bottom: 35px;
             font-size: 24px;
         }
-
-        /* ZMIANA: Dodano styl dla kontenera siatki */
         .button-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr; /* Tworzy dwie równe kolumny */
-            gap: 15px; /* Definiuje odstęp między kafelkami */
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
         }
-
         .menu-button {
-            /* ZMIANA: Usunięto 'display: block' i 'margin', aby siatka mogła zarządzać układem */
             background-color: transparent;
             color: #3498db;
             border: 2px solid #3498db;
-            padding: 20px 10px; /* ZMIANA: Dostosowano padding dla kafelków */
+            padding: 20px 10px;
             border-radius: 8px;
             cursor: pointer;
             text-decoration: none;
             font-size: 16px;
             font-weight: 600;
             transition: all 0.3s ease;
-            /* ZMIANA: Dodano flexbox, aby idealnie wyśrodkować tekst w kafelku (nawet jeśli jest wieloliniowy) */
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 50px; /* Zapewnia równą wysokość kafelków */
+            min-height: 50px;
         }
         .menu-button:hover {
             background-color: #3498db;
@@ -75,7 +71,6 @@
             <img src="baf_logo.png" alt="Logo BAF">
         </div>
         <h1>Szablony do wysyłania</h1>
-
         <div class="button-grid">
             <a href="refinans.html" class="menu-button">Refinansowanie</a>
             <a href="gdw.html" class="menu-button">Przygotowanie do wnioskowania</a>
