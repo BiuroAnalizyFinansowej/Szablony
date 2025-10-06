@@ -3,72 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Szablonów</title>
+    <title>Menu Szablonów - Minimalistyczne</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f4f4f4;
+            background-color: #f0f2f5;
         }
         .menu-container {
             text-align: center;
-            background-color: #fff;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            max-width: 500px; /* Ograniczenie szerokości kontenera */
+            background-color: #ffffff;
+            padding: 50px 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
             width: 90%;
-        }
-        .logo {
-            margin-bottom: 30px; /* Odstęp pod logo */
+            max-width: 450px;
         }
         .logo img {
-            max-width: 150px; /* Maksymalna szerokość logo */
-            height: auto; /* Zachowanie proporcji */
-            display: block; /* Ustawienie jako element blokowy dla marginesów auto */
-            margin: 0 auto; /* Wyśrodkowanie logo */
+            /* ZMIANA: Zwiększono logo */
+            max-width: 150px; 
+            height: auto;
+            margin-bottom: 25px;
         }
         h1 {
-            color: #333;
-            margin-bottom: 30px;
+            color: #2c3e50;
+            font-weight: 600;
+            margin-bottom: 35px;
+            font-size: 24px;
         }
         .menu-button {
-            display: block; /* Ustawienie przycisków jako bloki */
-            width: calc(100% - 30px); /* Szerokość przycisku z uwzględnieniem paddingu */
-            background-color: #007BFF;
-            color: white;
-            padding: 15px 15px; /* Mniejszy padding poziomy, skoro szerokość jest 100% */
-            margin: 10px auto; /* Wyśrodkowanie przycisków */
-            border: none;
-            border-radius: 5px;
+            display: block;
+            background-color: transparent;
+            color: #3498db;
+            border: 2px solid #3498db;
+            padding: 14px 20px;
+            margin: 15px auto;
+            border-radius: 8px;
             cursor: pointer;
             text-decoration: none;
             font-size: 16px;
-            transition: background-color 0.3s;
+            font-weight: 600;
+            transition: all 0.3s ease;
         }
         .menu-button:hover {
-            background-color: #0056b3;
+            background-color: #3498db;
+            color: white;
+            transform: translateY(-3px); /* Lekkie uniesienie przycisku */
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
         }
     </style>
 </head>
 <body>
-
     <div class="menu-container">
         <div class="logo">
             <img src="baf_logo.png" alt="Logo BAF">
         </div>
-        
         <h1>Szablony do wysyłania</h1>
-        
-        <a href="/refinans.html" class="menu-button">Refinansowanie</a>
-        
-        <a href="/przygotowanie.html" class="menu-button">Przygotowanie do wnioskowania za jakiś czas</a>
+        <a href="refinans.html" class="menu-button">Refinansowanie</a>
+        <a href="gdw.html" class="menu-button">Przygotowanie do wnioskowania</a>
     </div>
-
 </body>
 </html>
-
