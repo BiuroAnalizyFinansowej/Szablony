@@ -1,1 +1,1 @@
-# Szblony
+# Szablony
