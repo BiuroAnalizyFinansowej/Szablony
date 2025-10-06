@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Szablonów</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .menu-container {
+            text-align: center;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            max-width: 500px; /* Ograniczenie szerokości kontenera */
+            width: 90%;
+        }
+        .logo {
+            margin-bottom: 30px; /* Odstęp pod logo */
+        }
+        .logo img {
+            max-width: 150px; /* Maksymalna szerokość logo */
+            height: auto; /* Zachowanie proporcji */
+            display: block; /* Ustawienie jako element blokowy dla marginesów auto */
+            margin: 0 auto; /* Wyśrodkowanie logo */
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .menu-button {
+            display: block; /* Ustawienie przycisków jako bloki */
+            width: calc(100% - 30px); /* Szerokość przycisku z uwzględnieniem paddingu */
+            background-color: #007BFF;
+            color: white;
+            padding: 15px 15px; /* Mniejszy padding poziomy, skoro szerokość jest 100% */
+            margin: 10px auto; /* Wyśrodkowanie przycisków */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .menu-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu-container">
+        <div class="logo">
+            <img src="baf_logo.png" alt="Logo BAF">
+        </div>
+        
+        <h1>Szablony do wysyłania</h1>
+        
+        <a href="/refinansowanie.html" class="menu-button">Refinansowanie</a>
+        
+        <a href="/przygotowanie.html" class="menu-button">Przygotowanie do wnioskowania za jakiś czas</a>
+    </div>
+
+</body>
+</html>
