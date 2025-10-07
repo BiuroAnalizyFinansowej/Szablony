@@ -8,252 +8,320 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:700&display=swap" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400&display=swap" rel="stylesheet" type="text/css">
-    </head>
+    
+    <style>
+        #helper-box {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 250px;
+            background-color: #fff0f0;
+            border: 1px solid #d9534f;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            font-family: Arial, sans-serif;
+            z-index: 1000;
+        }
+        #helper-box p {
+            margin: 0 0 15px 0;
+            color: #a94442;
+            font-size: 14px;
+            line-height: 1.5;
+            text-align: center;
+        }
+        #copyButton {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            outline: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        #copyButton:hover {
+            background-color: #0056b3;
+        }
+        #copyButton:active {
+            transform: scale(0.98);
+        }
+        #copyButton.copied {
+            background-color: #28a745; /* Zielony kolor po skopiowaniu */
+        }
+    </style>
+</head>
 <body style="margin: 0; padding: 0; background-color: #f4f7f9; font-family: 'Lato', Arial, sans-serif;">
-    <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" style="background-color: #f4f7f9;">
-        <tr>
-            <td align="center">
-                <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" style="max-width: 800px;">
-                    <tr>
-                        <td align="center" style="background-color: #002d5a; padding: 40px 20px;">
-                             <div style="font-family: 'Montserrat', sans-serif; text-align: center;">
-                                 <div style="font-size: 60px; font-weight: 700; color: #ffffff; position: relative; letter-spacing: -10px; line-height: 1;">
-                                     <span style="position: relative; z-index: 1;">B</span><span style="position: relative; z-index: 2;">A</span><span style="position: relative; z-index: 1;">F</span>
-                                 </div>
-                                 <div style="font-family: 'Roboto', sans-serif; font-size: 14px; color: #ffffff; letter-spacing: 1px; margin-top: 8px; text-align: center;">
-                                     BIURO ANALIZY FINANSOWEJ
-                                 </div>
-                             </div>
-                        </td>
-                    </tr>
 
-                    <tr>
-                        <td style="background-color: #ffffff; padding: 40px 50px;">
-                            <h1 style="font-family: 'Lato', Arial, sans-serif; font-size: 28px; font-weight: 400; color: #002d5a; margin: 0 0 25px 0;">Szanowni Państwo,</h1>
+    <div id="helper-box">
+        <p><strong>UWAGA!</strong><br>Kopiowana treść może się dublować. Pamiętaj, żeby usunąć powieloną treść po wklejeniu.</p>
+        <button id="copyButton">Kopiuj treść maila</button>
+    </div>
 
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" style="margin-bottom: 25px;">
-                                <tr>
-                                    <td style="background: #eaf5ff; border-left: 4px solid #007bff; padding: 15px 20px; border-radius: 4px;">
-                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                            <tr>
-                                                <td width="30" valign="top" style="padding-right: 15px;">
-                                                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDU2YjMiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMCIvPjxsaW5lIHgxPSIxMiIgeTE9IjE2IiB4Mj0iMTIiIHkyPSIxMiIvPjxsaW5lIHgxPSIxMiIgeTE9IjgiIHgyPSIxMi4wMSIgeTI9IjgiLz48L3N2Zz4=" alt="Info" width="24" height="24">
-                                                </td>
-                                                <td valign="middle">
-                                                    <p style="margin:0; font-family: 'Lato', Arial, sans-serif; font-size: 16px; color: #002d5a; line-height: 1.6;">
-                                                        <strong>Oferta Specjalna:</strong> Propozycja przygotowana wyłącznie dla profesjonalistów z branży medycznej.
-                                                    </p>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </table>
+    <div id="email-content-wrapper">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" style="background-color: #f4f7f9; border-collapse: collapse;">
+            <tr>
+                <td align="center">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" style="max-width: 800px; border-collapse: collapse;">
+                        <tr>
+                            <td align="center" style="background-color: #002d5a; padding: 40px 20px;">
+                                  <div style="font-family: 'Montserrat', sans-serif; text-align: center;">
+                                      <div style="font-size: 60px; font-weight: 700; color: #ffffff; position: relative; letter-spacing: -10px; line-height: 1;">
+                                          <span style="position: relative; z-index: 1;">B</span><span style="position: relative; z-index: 2;">A</span><span style="position: relative; z-index: 1;">F</span>
+                                      </div>
+                                      <div style="font-family: 'Roboto', sans-serif; font-size: 14px; color: #ffffff; letter-spacing: 1px; margin-top: 8px; text-align: center;">
+                                          BIURO ANALIZY FINANSOWEJ
+                                      </div>
+                                  </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: #ffffff; padding: 40px 50px;">
+                                <h1 style="font-family: 'Lato', Arial, sans-serif; font-size: 28px; font-weight: 400; color: #002d5a; margin: 0 0 25px 0;">Szanowni Państwo,</h1>
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" style="margin-bottom: 25px; border-collapse: collapse;">
+                                    <tr>
+                                        <td style="background: #eaf5ff; border-left: 4px solid #007bff; padding: 15px 20px; border-radius: 4px;">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;">
+                                                <tr>
+                                                    <td width="30" valign="top" style="padding-right: 15px;">
+                                                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZHRoPSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDU2YjMiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMCIvPjxsaW5lIHgxPSIxMiIgeTE9IjE2IiB4Mj0iMTIiIHkyPSIxMiIvPjxsaW5lIHgxPSIxMiIgeTE9IjgiIHgyPSIxMi4wMSIgeTI9IjgiLz48L3N2Zz4=" alt="Info" width="24" height="24" style="display: block;">
+                                                    </td>
+                                                    <td valign="middle">
+                                                        <p style="margin:0; font-family: 'Lato', Arial, sans-serif; font-size: 16px; color: #002d5a; line-height: 1.6;">
+                                                            <strong>Oferta Specjalna:</strong> Propozycja przygotowana wyłącznie dla profesjonalistów z branży medycznej.
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <p style="font-family: 'Lato', Arial, sans-serif; font-size: 17px; color: #555; margin: 0 0 20px 0; line-height: 1.6;">
+                                    Rozwój zawodowy w branży medycznej wymaga nie tylko pasji i wiedzy, ale także solidnego zaplecza finansowego. W odpowiedzi na potrzeby Państwa branży przygotowaliśmy elastyczną ofertę finansowania, które można przeznaczyć na <strong>dowolny cel</strong>. Niezależnie od tego, czy planują Państwo zakup nowoczesnego sprzętu, remont gabinetu, czy inwestycje w dalszy rozwój, nasza oferta zapewni niezbędne wsparcie. To także doskonała okazja, by uporządkować finanse poprzez <strong>skonsolidowanie istniejących zobowiązań firmowych oraz prywatnych</strong>, co istotne – <strong>bez obciążania Państwa hipoteki!</strong>
+                                </p>
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" style="margin-bottom: 20px; border-bottom: 1px solid #e0e0e0; padding-bottom: 10px; border-collapse: collapse;">
+                                    <tr>
+                                        <td>
+                                            <h2 style="font-family: 'Lato', Arial, sans-serif; font-size: 26px; color: #004d99; border-bottom: 2px solid #007bff; padding-bottom: 10px; margin: 0 0 25px 0; font-weight: 700;">Puls Inwestycji – Główne Parametry Oferty</h2>
+                                            <table width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;">
+                                                <tr>
+                                                    <td width="50%" valign="top" style="padding: 10px;">
+                                                        <div style="background-color: #f8fbff; border-left: 5px solid #007bff; padding: 20px; border-radius: 8px; height: 100%;">
+                                                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZHRoPSIzMiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDU2YjMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxyZWN0IHg9IjIiIHk9IjYiIHdpZHRoPSIyMCIgaGVpZHRoPSIxMiIgcng9IjIiLz48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIzIi8+PHBhdGggZD0iTTcgMTIgdi0yTTcgMTZ2LTJtMTAtNHYyTTE3IDE2di0yIi8+PC9zdmc+" alt="Ikona kwoty" width="32" height="32" style="margin-bottom: 10px; display: block;">
+                                                            <h3 style="margin: 0 0 10px 0; font-family: 'Lato', Arial, sans-serif; font-size: 18px; color: #0056b3; font-weight: 700;">Kwota Kredytu: Do 1 500 000 PLN</h3>
+                                                            <p style="margin: 0; font-family: 'Lato', Arial, sans-serif; font-size: 15px; color: #555; line-height: 1.6;">Wielkie plany wymagają konkretnego wsparcia i finansowania na najwyższym poziomie.</p>
+                                                        </div>
+                                                    </td>
+                                                    <td width="50%" valign="top" style="padding: 10px;">
+                                                        <div style="background-color: #f8fbff; border-left: 5px solid #007bff; padding: 20px; border-radius: 8px; height: 100%;">
+                                                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZHRoPSIzMiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDU2YjMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxyZWN0IHg9IjMiIHk9IjUiIHdpZHRoPSIxOCIgaGVpZHRoPSIxNCIgcng9IjIiLz48cGF0aCBkPSJNMyAxMGgxOE04IDN2NCBtOC00djQiLz48L3N2Zz4=" alt="Ikona okresu" width="32" height="32" style="margin-bottom: 10px; display: block;">
+                                                            <h3 style="margin: 0 0 10px 0; font-family: 'Lato', Arial, sans-serif; font-size: 18px; color: #0056b3; font-weight: 700;">Maksymalny Okres: Do 15 lat</h3>
+                                                            <p style="margin: 0; font-family: 'Lato', Arial, sans-serif; font-size: 15px; color: #555; line-height: 1.6;">Niska, wygodna rata pozwala zachować płynność finansową i swobodnie planować wydatki.</p>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="50%" valign="top" style="padding: 10px;">
+                                                        <div style="background-color: #f8fbff; border-left: 5px solid #007bff; padding: 20px; border-radius: 8px; height: 100%;">
+                                                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZHRoPSIzMiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDU2YjMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik0xOSAxNWwtNi02LTYgNiIvPjxjaXJjbGUgY3g9IjE3LjUiIGN5PSI3LjUiIHI9IjIuNSIvPjxjaXJjbGUgY3g9IjYuNSIgY3k9IjE3LjUiIHI9IjIuNSIvPjwvc3ZnPg==" alt="Ikona oprocentowania" width="32" height="32" style="margin-bottom: 10px; display: block;">
+                                                            <h3 style="margin: 0 0 10px 0; font-family: 'Lato', Arial, sans-serif; font-size: 18px; color: #0056b3; font-weight: 700;">Atrakcyjne Oprocentowanie: 8,15%</h3>
+                                                            <p style="margin: 0; font-family: 'Lato', Arial, sans-serif; font-size: 15px; color: #555; line-height: 1.6;">(Stała marża 3,5% + WIBOR 1M). Przejrzyste warunki, które pozwalają precyzyjnie planować budżet.</p>
+                                                        </div>
+                                                    </td>
+                                                    <td width="50%" valign="top" style="padding: 10px;">
+                                                        <div style="background-color: #f8fbff; border-left: 5px solid #007bff; padding: 20px; border-radius: 8px; height: 100%;">
+                                                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZHRoPSIzMiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDU2YjMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik0xMiAyMkwzIDExVjVoNmwzIDRsMy00aDZ2NnoiLz48cGF0aCBkPSJtOSAxOGg2Ii8+PC9zdmc+" alt="Ikona domu" width="32" height="32" style="margin-bottom: 10px; display: block;">
+                                                            <h3 style="margin: 0 0 10px 0; font-family: 'Lato', Arial, sans-serif; font-size: 18px; color: #0056b3; font-weight: 700;">Bez Zabezpieczenia Hipotecznego</h3>
+                                                            <p style="margin: 0; font-family: 'Lato', Arial, sans-serif; font-size: 15px; color: #555; line-height: 1.6;">Prywatne nieruchomości pozostają bezpieczne. Formalności ograniczone do absolutnego minimum.</p>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="50%" valign="top" style="padding: 10px;">
+                                                        <div style="background-color: #f8fbff; border-left: 5px solid #007bff; padding: 20px; border-radius: 8px; height: 100%;">
+                                                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZHRoPSIzMiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDU2YjMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik00IDE4VjhjMC0xLjEuOS0yIDItMmgxMmMxLjEgMCAyIC45IDIgMnYxME0xNCA5bC00IDQtNCA0TTggMmg4Ii8+PC9zdmc+" alt="Ikona BGK" width="32" height="32" style="margin-bottom: 10px; display: block;">
+                                                            <h3 style="margin: 0 0 10px 0; font-family: 'Lato', Arial, sans-serif; font-size: 18px; color: #0056b3; font-weight: 700;">Zabezpieczenie de minimis (BGK)</h3>
+                                                            <p style="margin: 0; font-family: 'Lato', Arial, sans-serif; font-size: 15px; color: #555; line-height: 1.6;">Dzięki współpracy z Bankiem Gospodarstwa Krajowego oferta zapewnia łatwiejszy dostęp do finansowania.</p>
+                                                        </div>
+                                                    </td>
+                                                    <td width="50%" valign="top" style="padding: 10px;">
+                                                        <div style="background-color: #f8fbff; border-left: 5px solid #007bff; padding: 20px; border-radius: 8px; height: 100%;">
+                                                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZHRoPSIzMiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDU2YjMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik0yIDEydjFhOSA5IDAgMCAwIDkuNSA4LjUgOSA5IDAgMCAwIDkuNS04LjV2LTFBNiA2IDAgMCAwIDEyIDZ6Ii8+PHBhdGggZD0iTTggMTFsNCA0bDQtNCIvPjwvc3ZnPg==" alt="Ikona przeniesienia" width="32" height="32" style="margin-bottom: 10px; display: block;">
+                                                            <h3 style="margin: 0 0 10px 0; font-family: 'Lato', Arial, sans-serif; font-size: 18px; color: #0056b3; font-weight: 700;">Możliwość Przeniesienia Kredytów</h3>
+                                                            <p style="margin: 0; font-family: 'Lato', Arial, sans-serif; font-size: 15px; color: #555; line-height: 1.6;">Przeniesienie jednego lub więcej kredytów (nawet z BIK prywatnego), by uprościć finanse i obniżyć raty.</p>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="50%" valign="top" style="padding: 10px;">
+                                                        <div style="background-color: #f8fbff; border-left: 5px solid #007bff; padding: 20px; border-radius: 8px; height: 100%;">
+                                                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZHRoPSIzMiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDU2YjMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxyZWN0IHg9IjQiIHk9IjMiIHdpZHRoPSIxNiIgaGVpZHRoPSIxOCIgcng9IjIiLz48bGluZSB4MT0iOCIgeTE9IjciIHgyPSIxNiIgeTI9IjciLz48bGluZSB4MT0iOCIgeTE9IjExIiB4Mj0iMTYiIHkyPSIxMSIvPjxsaW5lIHgxPSIxMSIgeTE9IjE1IiB4Mj0iMTMiIHkyPSIxNSIvPjxsaW5lIHgxPSIxMiIgeTE9IjE1IiB4Mj0iMTIiIHkyPSIxOSIvPjwvc3ZnPg==" alt="Ikona raty" width="32" height="32" style="margin-bottom: 10px; display: block;">
+                                                            <h3 style="margin: 0 0 10px 0; font-family: 'Lato', Arial, sans-serif; font-size: 18px; color: #0056b3; font-weight: 700;">Szacunkowa Rata: ok. 14 450 zł</h3>
+                                                            <p style="margin: 0; font-family: 'Lato', Arial, sans-serif; font-size: 15px; color: #555; line-height: 1.6;">Przykładowa kalkulacja dla 1,5 mln zł na 15 lat (180 miesięcy). Finalna rata zależy od oceny zdolności kredytowej.</p>
+                                                        </div>
+                                                    </td>
+                                                    <td width="50%" valign="top" style="padding: 10px;">
+                                                        <div style="background-color: #f8fbff; border-left: 5px solid #007bff; padding: 20px; border-radius: 8px; height: 100%;">
+                                                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZHRoPSIzMiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDU2YjMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik0xOCAzYTMgMyAwIDAgMCAzIDN2OGEzIDMgMCAwIDEtMyAzTTcgM0g1YTIgMiAwIDAgMC0yIDJ2OWEyIDIgMCAwIDAgMiAyIi8+PHBhdGggZD0iTTIgOGgxMmMxLjEgMCAyIC45IDIgMnYyYzAgMS4xLS45IDItMiAyaC0xbC0yIDJoLTEuNmMtLjUgMC0uOC0uMi0xLS41Ii8+PC9zdmc+" alt="Ikona elastyczności" width="32" height="32" style="margin-bottom: 10px; display: block;">
+                                                            <h3 style="margin: 0 0 10px 0; font-family: 'Lato', Arial, sans-serif; font-size: 18px; color: #0056b3; font-weight: 700;">Bezpłatna Nadpłata i Spłata</h3>
+                                                            <p style="margin: 0; font-family: 'Lato', Arial, sans-serif; font-size: 15px; color: #555; line-height: 1.6;">Gwarantujemy pełną elastyczność – mogą Państwo spłacić kredyt w całości lub częściowo w dowolnym momencie bez dodatkowych kosztów.</p>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" style="margin-bottom: 20px; border-bottom: 1px solid #e0e0e0; padding-bottom: 30px; border-collapse: collapse;">
+                                    <tr>
+                                        <td>
+                                            <h2 style="font-family: 'Lato', Arial, sans-serif; font-size: 26px; color: #004d99; border-bottom: 2px solid #007bff; padding-bottom: 10px; margin: 0 0 25px 0; font-weight: 700;">Diagnoza Korzyści – Co to oznacza w praktyce?</h2>
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" style="margin-bottom: 25px; border-collapse: collapse;">
+                                                <tr>
+                                                    <td width="40" valign="top" style="padding-right: 15px;">
+                                                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOCIgaGVpZHRoPSIyOCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMyOGE3NDUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMjIgMTEuMDhWMTJhMTAgMTAgMCAxIDEtNS45My04LjgxIj48L3BhdGg+PHBvbHlsaW5lIHBvaW50cz0iMjIgNCAxMiAxNC4wMSA5IDExLjAxIj48L3BvbHlsaW5lPjwvc3ZnPg==" alt="Checkmark" width="28" height="28" style="display: block;">
+                                                    </td>
+                                                    <td valign="top">
+                                                        <p style="font-family: 'Lato', Arial, sans-serif; font-size: 16px; color: #555; margin: 0; line-height: 1.6;"><strong>Pełne bezpieczeństwo majątku prywatnego.</strong> Dzięki temu, że kredyt nie wymaga hipoteki, dom i prywatne inwestycje są całkowicie bezpieczne. Rozwój zawodowy nie musi wiązać się z osobistym ryzykiem.</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" style="margin-bottom: 25px; border-collapse: collapse;">
+                                                <tr>
+                                                    <td width="40" valign="top" style="padding-right: 15px;">
+                                                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOCIgaGVpZHRoPSIyOCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMyOGE3NDUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMjIgMTEuMDhWMTJhMTAgMTAgMCAxIDEtNS45My04LjgxIj48L3BhdGg+PHBvbHlsaW5lIHBvaW50cz0iMjIgNCAxMiAxNC4wMSA5IDExLjAxIj48L3BvbHlsaW5lPjwvc3ZnPg==" alt="Checkmark" width="28" height="28" style="display: block;">
+                                                    </td>
+                                                    <td valign="top">
+                                                        <p style="font-family: 'Lato', Arial, sans-serif; font-size: 16px; color: #555; margin: 0; line-height: 1.6;"><strong>Jeden kredyt, wiele możliwości.</strong> Kredytem można spłacić wszystkie aktualne zobowiązania firmowe i prywatne. To oznacza jedną, niższą ratę, porządek w finansach i więcej pieniędzy w budżecie na bieżące potrzeby praktyki.</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" style="margin-bottom: 25px; border-collapse: collapse;">
+                                                <tr>
+                                                    <td width="40" valign="top" style="padding-right: 15px;">
+                                                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOCIgaGVpZHRoPSIyOCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMyOGE3NDUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMjIgMTEuMDhWMTJhMTAgMTAgMCAxIDEtNS45My04LjgxIj48L3BhdGg+PHBvbHlsaW5lIHBvaW50cz0iMjIgNCAxMiAxNC4wMSA5IDExLjAxIj48L3BvbHlsaW5lPjwvc3ZnPg==" alt="Checkmark" width="28" height="28" style="display: block;">
+                                                    </td>
+                                                    <td valign="top">
+                                                        <p style="font-family: 'Lato', Arial, sans-serif; font-size: 16px; color: #555; margin: 0; line-height: 1.6;"><strong>Oszczędność najcenniejszego zasobu – czasu.</strong> Uproszczone procedury i minimum formalności na start oznaczają, że cały proces przebiega sprawnie, pozwalając w pełni skupić się na pacjentach i prowadzeniu praktyki, a nie na formalnościach bankowych.</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" style="border-collapse: collapse;">
+                                                <tr>
+                                                    <td width="40" valign="top" style="padding-right: 15px;">
+                                                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOCIgaGVpZHRoPSIyOCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMyOGE3NDUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMjIgMTEuMDhWMTJhMTAgMTAgMCAxIDEtNS45My04LjgxIj48L3BhdGg+PHBvbHlsaW5lIHBvaW50cz0iMjIgNCAxMiAxNC4wMSA5IDExLjAxIj48L3BvbHlsaW5lPjwvc3ZnPg==" alt="Checkmark" width="28" height="28" style="display: block;">
+                                                    </td>
+                                                    <td valign="top">
+                                                        <p style="font-family: 'Lato', Arial, sans-serif; font-size: 16px; color: #555; margin: 0; line-height: 1.6;"><strong>Elastyczność na przyszłość.</strong> Wysoka dostępna kwota i długi okres finansowania dają swobodę. Można sfinansować bieżące potrzeby i w przyszłości łatwiej sięgnąć po dodatkowe środki na dalszy rozwój, bez przechodzenia przez cały proces od nowa.</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" style="margin-bottom: 20px; border-bottom: 1px solid #e0e0e0; padding-bottom: 30px; border-collapse: collapse;">
+                                    <tr>
+                                        <td>
+                                            <h2 style="font-family: 'Lato', Arial, sans-serif; font-size: 26px; color: #004d99; border-bottom: 2px solid #007bff; padding-bottom: 10px; margin: 0 0 25px 0; font-weight: 700;">Co Wyróżnia Naszą Ofertę?</h2>
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" style="margin-bottom: 25px; border-collapse: collapse;">
+                                                <tr>
+                                                    <td width="40" valign="top" style="padding-right: 15px;">
+                                                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOCIgaGVpZHRoPSIyOCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMyOGE3NDUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMjIgMTEuMDhWMTJhMTAgMTAgMCAxIDEtNS45My04LjgxIj48L3BhdGg+PHBvbHlsaW5lIHBvaW50cz0iMjIgNCAxMiAxNC4wMSA5IDExLjAxIj48L3BvbHlsaW5lPjwvc3ZnPg==" alt="Checkmark" width="28" height="28" style="display: block;">
+                                                    </td>
+                                                    <td valign="top">
+                                                        <h3 style="font-family: 'Lato', Arial, sans-serif; font-size: 18px; color: #0056b3; margin: 0 0 5px 0; font-weight: 700;">Minimum formalności</h3>
+                                                        <p style="font-family: 'Lato', Arial, sans-serif; font-size: 16px; color: #555; margin: 0; line-height: 1.6;">Nie wymagamy biznesplanów ani prognoz finansowych. Decyzja opiera się na dotychczasowych wynikach firmy.</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" style="margin-bottom: 25px; border-collapse: collapse;">
+                                                <tr>
+                                                    <td width="40" valign="top" style="padding-right: 15px;">
+                                                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOCIgaGVpZHRoPSIyOCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMyOGE3NDUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMjIgMTEuMDhWMTJhMTAgMTAgMCAxIDEtNS45My04LjgxIj48L3BhdGg+PHBvbHlsaW5lIHBvaW50cz0iMjIgNCAxMiAxNC4wMSA5IDExLjAxIj48L3BvbHlsaW5lPjwvc3ZnPg==" alt="Checkmark" width="28" height="28" style="display: block;">
+                                                    </td>
+                                                    <td valign="top">
+                                                        <h3 style="font-family: 'Lato', Arial, sans-serif; font-size: 18px; color: #0056b3; margin: 0 0 5px 0; font-weight: 700;">Konsolidacja zobowiązań prywatnych</h3>
+                                                        <p style="font-family: 'Lato', Arial, sans-serif; font-size: 16px; color: #555; margin: 0; line-height: 1.6;">Jako jeden z nielicznych produktów na rynku, nasz kredyt firmowy pozwala na spłatę prywatnych kredytów gotówkowych czy limitów w koncie, co porządkuje finanse i obniża miesięczne obciążenie.</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" style="border-collapse: collapse;">
+                                                <tr>
+                                                    <td width="40" valign="top" style="padding-right: 15px;">
+                                                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOCIgaGVpZHRoPSIyOCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMyOGE3NDUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMjIgMTEuMDhWMTJhMTAgMTAgMCAxIDEtNS45My04LjgxIj48L3BhdGg+PHBvbHlsaW5lIHBvaW50cz0iMjIgNCAxMiAxNC4wMSA5IDExLjAxIj48L3BvbHlsaW5lPjwvc3ZnPg==" alt="Checkmark" width="28" height="28" style="display: block;">
+                                                    </td>
+                                                    <td valign="top">
+                                                        <h3 style="font-family: 'Lato', Arial, sans-serif; font-size: 18px; color: #0056b3; margin: 0 0 5px 0; font-weight: 700;">Bezpłatna nadpłata i wcześniejsza spłata</h3>
+                                                        <p style="font-family: 'Lato', Arial, sans-serif; font-size: 16px; color: #555; margin: 0; line-height: 1.6;">Gwarantujemy możliwość bezpłatnej nadpłaty oraz całkowitej spłaty kredytu w dowolnym momencie. To kluczowy wyróżnik na tle większości kredytów firmowych, który daje Państwu pełną kontrolę nad finansami.</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" style="margin-bottom: 20px; border-collapse: collapse;">
+                                    <tr>
+                                        <td>
+                                            <h2 style="font-family: 'Lato', Arial, sans-serif; font-size: 26px; color: #004d99; border-bottom: 2px solid #007bff; padding-bottom: 10px; margin: 0 0 25px 0; font-weight: 700;">Uproszczone Formalności</h2>
+                                            <p style="font-family: 'Lato', Arial, sans-serif; font-size: 17px; color: #555; margin: 0 0 20px 0; line-height: 1.6;">
+                                                Aby rozpocząć proces, wystarczy przygotować podstawowe dokumenty.
+                                            </p>
+                                            <div style="background: #f8faff; border-left: 4px solid #007bff; padding: 20px; border-radius: 4px; font-size: 1em;">
+                                                <h3 style="font-family: 'Lato', Arial, sans-serif; font-size: 19px; color: #0056b3; margin: 0 0 15px 0; font-weight: 700;">Wymagane Dokumenty:</h3>
+                                                <ul style="padding-left: 20px; margin: 0; font-family: 'Lato', Arial, sans-serif; font-size: 16px; color: #555; line-height: 1.8;">
+                                                    <li style="margin-bottom: 8px;">PIT za poprzedni rok.</li>
+                                                    <li style="margin-bottom: 8px;">BIK prywatny oraz firmowy.</li>
+                                                    <li style="margin-bottom: 8px;">Dokumenty finansowe bieżące (Ewidencja lub KPiR z rozliczonym ostatnim miesiącem).</li>
+                                                    <li style="margin-bottom: 8px;">Zaświadczenia o niezaleganiu ZUS i US <em style="font-style: italic; color: #555;">(wymagane dopiero do podpisania umowy)</em>.</li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <p style="font-family: 'Lato', Arial, sans-serif; font-size: 17px; color: #555; margin: 30px 0 0 0; line-height: 1.6;">
+                                    W razie jakichkolwiek pytań lub wątpliwości, pozostajemy do Państwa pełnej dyspozycji.
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
 
-                            <p style="font-family: 'Lato', Arial, sans-serif; font-size: 17px; color: #555; margin: 0 0 20px 0; line-height: 1.6;">
-                                Rozwój zawodowy w branży medycznej wymaga nie tylko pasji i wiedzy, ale także solidnego zaplecza finansowego. W odpowiedzi na potrzeby Państwa branży przygotowaliśmy elastyczną ofertę finansowania, które można przeznaczyć na <strong>dowolny cel</strong>. Niezależnie od tego, czy planują Państwo zakup nowoczesnego sprzętu, remont gabinetu, czy inwestycje w dalszy rozwój, nasza oferta zapewni niezbędne wsparcie. To także doskonała okazja, by uporządkować finanse poprzez <strong>skonsolidowanie istniejących zobowiązań firmowych oraz prywatnych</strong>, co istotne – <strong>bez obciążania Państwa hipoteki!</strong>
-                            </p>
-                           
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" style="margin-bottom: 20px; border-bottom: 1px solid #e0e0e0; padding-bottom: 10px;">
-                                <tr>
-                                    <td>
-                                        <h2 style="font-family: 'Lato', Arial, sans-serif; font-size: 26px; color: #004d99; border-bottom: 2px solid #007bff; padding-bottom: 10px; margin: 0 0 25px 0; font-weight: 700;">Puls Inwestycji – Główne Parametry Oferty</h2>
-                                        
-                                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
-                                            <tr>
-                                                <td width="50%" valign="top" style="padding: 10px;">
-                                                    <div style="background-color: #f8fbff; border-left: 5px solid #007bff; padding: 20px; border-radius: 8px; height: 100%;">
-                                                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDU2YjMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxyZWN0IHg9IjIiIHk9IjYiIHdpZHRoPSIyMCIgaGVpZ2h0PSIxMiIgcng9IjIiLz48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIzIi8+PHBhdGggZD0iTTcgMTIgdi0yTTcgMTZ2LTJtMTAtNHYyTTE3IDE2di0yIi8+PC9zdmc+" alt="Ikona kwoty" width="32" height="32" style="margin-bottom: 10px;">
-                                                        <h3 style="margin: 0 0 10px 0; font-family: 'Lato', Arial, sans-serif; font-size: 18px; color: #0056b3; font-weight: 700;">Kwota Kredytu: Do 1 500 000 PLN</h3>
-                                                        <p style="margin: 0; font-family: 'Lato', Arial, sans-serif; font-size: 15px; color: #555; line-height: 1.6;">Wielkie plany wymagają konkretnego wsparcia i finansowania na najwyższym poziomie.</p>
-                                                    </div>
-                                                </td>
-                                                <td width="50%" valign="top" style="padding: 10px;">
-                                                    <div style="background-color: #f8fbff; border-left: 5px solid #007bff; padding: 20px; border-radius: 8px; height: 100%;">
-                                                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDU2YjMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxyZWN0IHg9IjMiIHk9IjUiIHdpZHRoPSIxOCIgaGVpZ2h0PSIxNCIgcng9IjIiLz48cGF0aCBkPSJNMyAxMGgxOE04IDN2NCBtOC00djQiLz48L3N2Zz4=" alt="Ikona okresu" width="32" height="32" style="margin-bottom: 10px;">
-                                                        <h3 style="margin: 0 0 10px 0; font-family: 'Lato', Arial, sans-serif; font-size: 18px; color: #0056b3; font-weight: 700;">Maksymalny Okres: Do 15 lat</h3>
-                                                        <p style="margin: 0; font-family: 'Lato', Arial, sans-serif; font-size: 15px; color: #555; line-height: 1.6;">Niska, wygodna rata pozwala zachować płynność finansową i swobodnie planować wydatki.</p>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td width="50%" valign="top" style="padding: 10px;">
-                                                    <div style="background-color: #f8fbff; border-left: 5px solid #007bff; padding: 20px; border-radius: 8px; height: 100%;">
-                                                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDU2YjMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik0xOSAxNWwtNi02LTYgNiIvPjxjaXJjbGUgY3g9IjE3LjUiIGN5PSI3LjUiIHI9IjIuNSIvPjxjaXJjbGUgY3g9IjYuNSIgY3k9IjE3LjUiIHI9IjIuNSIvPjwvc3ZnPg==" alt="Ikona oprocentowania" width="32" height="32" style="margin-bottom: 10px;">
-                                                        <h3 style="margin: 0 0 10px 0; font-family: 'Lato', Arial, sans-serif; font-size: 18px; color: #0056b3; font-weight: 700;">Atrakcyjne Oprocentowanie: 8,15%</h3>
-                                                        <p style="margin: 0; font-family: 'Lato', Arial, sans-serif; font-size: 15px; color: #555; line-height: 1.6;">(Stała marża 3,5% + WIBOR 1M). Przejrzyste warunki, które pozwalają precyzyjnie planować budżet.</p>
-                                                    </div>
-                                                </td>
-                                                <td width="50%" valign="top" style="padding: 10px;">
-                                                    <div style="background-color: #f8fbff; border-left: 5px solid #007bff; padding: 20px; border-radius: 8px; height: 100%;">
-                                                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDU2YjMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik0xMiAyMkwzIDExVjVoNmwzIDRsMy00aDZ2NnoiLz48cGF0aCBkPSJtOSAxOGg2Ii8+PC9zdmc+" alt="Ikona domu" width="32" height="32" style="margin-bottom: 10px;">
-                                                        <h3 style="margin: 0 0 10px 0; font-family: 'Lato', Arial, sans-serif; font-size: 18px; color: #0056b3; font-weight: 700;">Bez Zabezpieczenia Hipotecznego</h3>
-                                                        <p style="margin: 0; font-family: 'Lato', Arial, sans-serif; font-size: 15px; color: #555; line-height: 1.6;">Prywatne nieruchomości pozostają bezpieczne. Formalności ograniczone do absolutnego minimum.</p>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td width="50%" valign="top" style="padding: 10px;">
-                                                    <div style="background-color: #f8fbff; border-left: 5px solid #007bff; padding: 20px; border-radius: 8px; height: 100%;">
-                                                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDU2YjMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik00IDE4VjhjMC0xLjEuOS0yIDItMmgxMmMxLjEgMCAyIC45IDIgMnYxME0xNCA5bC00IDQtNCA0TTggMmg4Ii8+PC9zdmc+" alt="Ikona BGK" width="32" height="32" style="margin-bottom: 10px;">
-                                                        <h3 style="margin: 0 0 10px 0; font-family: 'Lato', Arial, sans-serif; font-size: 18px; color: #0056b3; font-weight: 700;">Zabezpieczenie de minimis (BGK)</h3>
-                                                        <p style="margin: 0; font-family: 'Lato', Arial, sans-serif; font-size: 15px; color: #555; line-height: 1.6;">Dzięki współpracy z Bankiem Gospodarstwa Krajowego oferta zapewnia łatwiejszy dostęp do finansowania.</p>
-                                                    </div>
-                                                </td>
-                                                <td width="50%" valign="top" style="padding: 10px;">
-                                                    <div style="background-color: #f8fbff; border-left: 5px solid #007bff; padding: 20px; border-radius: 8px; height: 100%;">
-                                                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDU2YjMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik0yIDEydjFhOSA5IDAgMCAwIDkuNSA4LjUgOSA5IDAgMCAwIDkuNS04LjV2LTFBNiA2IDAgMCAwIDEyIDZ6Ii8+PHBhdGggZD0iTTggMTFsNCA0bDQtNCIvPjwvc3ZnPg==" alt="Ikona przeniesienia" width="32" height="32" style="margin-bottom: 10px;">
-                                                        <h3 style="margin: 0 0 10px 0; font-family: 'Lato', Arial, sans-serif; font-size: 18px; color: #0056b3; font-weight: 700;">Możliwość Przeniesienia Kredytów</h3>
-                                                        <p style="margin: 0; font-family: 'Lato', Arial, sans-serif; font-size: 15px; color: #555; line-height: 1.6;">Przeniesienie jednego lub więcej kredytów (nawet z BIK prywatnego), by uprościć finanse i obniżyć raty.</p>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td width="50%" valign="top" style="padding: 10px;">
-                                                    <div style="background-color: #f8fbff; border-left: 5px solid #007bff; padding: 20px; border-radius: 8px; height: 100%;">
-                                                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDU2YjMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxyZWN0IHg9IjQiIHk9IjMiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxOCIgcng9IjIiLz48bGluZSB4MT0iOCIgeTE9IjciIHgyPSIxNiIgeTI9IjciLz48bGluZSB4MT0iOCIgeTE9IjExIiB4Mj0iMTYiIHkyPSIxMSIvPjxsaW5lIHgxPSIxMSIgeTE9IjE1IiB4Mj0iMTMiIHkyPSIxNSIvPjxsaW5lIHgxPSIxMiIgeTE9IjE1IiB4Mj0iMTIiIHkyPSIxOSIvPjwvc3ZnPg==" alt="Ikona raty" width="32" height="32" style="margin-bottom: 10px;">
-                                                        <h3 style="margin: 0 0 10px 0; font-family: 'Lato', Arial, sans-serif; font-size: 18px; color: #0056b3; font-weight: 700;">Szacunkowa Rata: ok. 14 450 zł</h3>
-                                                        <p style="margin: 0; font-family: 'Lato', Arial, sans-serif; font-size: 15px; color: #555; line-height: 1.6;">Przykładowa kalkulacja dla 1,5 mln zł na 15 lat (180 miesięcy). Finalna rata zależy od oceny zdolności kredytowej.</p>
-                                                    </div>
-                                                </td>
-                                                <td width="50%" valign="top" style="padding: 10px;">
-                                                    <div style="background-color: #f8fbff; border-left: 5px solid #007bff; padding: 20px; border-radius: 8px; height: 100%;">
-                                                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDU2YjMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik0xOCAzYTMgMyAwIDAgMCAzIDN2OGEzIDMgMCAwIDEtMyAzTTcgM0g1YTIgMiAwIDAgMC0yIDJ2OWEyIDIgMCAwIDAgMiAyIi8+PHBhdGggZD0iTTIgOGgxMmMxLjEgMCAyIC45IDIgMnYyYzAgMS4xLS45IDItMiAyaC0xbC0yIDJoLTEuNmMtLjUgMC0uOC0uMi0xLS41Ii8+PC9zdmc+" alt="Ikona elastyczności" width="32" height="32" style="margin-bottom: 10px;">
-                                                        <h3 style="margin: 0 0 10px 0; font-family: 'Lato', Arial, sans-serif; font-size: 18px; color: #0056b3; font-weight: 700;">Bezpłatna Nadpłata i Spłata</h3>
-                                                        <p style="margin: 0; font-family: 'Lato', Arial, sans-serif; font-size: 15px; color: #555; line-height: 1.6;">Gwarantujemy pełną elastyczność – mogą Państwo spłacić kredyt w całości lub częściowo w dowolnym momencie bez dodatkowych kosztów.</p>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </table>
-                            
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" style="margin-bottom: 20px; border-bottom: 1px solid #e0e0e0; padding-bottom: 30px;">
-                                <tr>
-                                    <td>
-                                        <h2 style="font-family: 'Lato', Arial, sans-serif; font-size: 26px; color: #004d99; border-bottom: 2px solid #007bff; padding-bottom: 10px; margin: 0 0 25px 0; font-weight: 700;">Diagnoza Korzyści – Co to oznacza w praktyce?</h2>
-                                       
-                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" style="margin-bottom: 25px;">
-                                            <tr>
-                                                <td width="40" valign="top" style="padding-right: 15px;">
-                                                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMyOGE3NDUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMjIgMTEuMDhWMTJhMTAgMTAgMCAxIDEtNS45My04LjgxIj48L3BhdGg+PHBvbHlsaW5lIHBvaW50cz0iMjIgNCAxMiAxNC4wMSA5IDExLjAxIj48L3BvbHlsaW5lPjwvc3ZnPg==" alt="Checkmark" width="28" height="28">
-                                                </td>
-                                                <td valign="top">
-                                                    <p style="font-family: 'Lato', Arial, sans-serif; font-size: 16px; color: #555; margin: 0; line-height: 1.6;"><strong>Pełne bezpieczeństwo majątku prywatnego.</strong> Dzięki temu, że kredyt nie wymaga hipoteki, dom i prywatne inwestycje są całkowicie bezpieczne. Rozwój zawodowy nie musi wiązać się z osobistym ryzykiem.</p>
-                                                </td>
-                                            </tr>
-                                        </table>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const copyBtn = document.getElementById('copyButton');
+            const emailWrapper = document.getElementById('email-content-wrapper');
 
-                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" style="margin-bottom: 25px;">
-                                            <tr>
-                                                <td width="40" valign="top" style="padding-right: 15px;">
-                                                   <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMyOGE3NDUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMjIgMTEuMDhWMTJhMTAgMTAgMCAxIDEtNS45My04LjgxIj48L3BhdGg+PHBvbHlsaW5lIHBvaW50cz0iMjIgNCAxMiAxNC4wMSA5IDExLjAxIj48L3BvbHlsaW5lPjwvc3ZnPg==" alt="Checkmark" width="28" height="28">
-                                                </td>
-                                                <td valign="top">
-                                                     <p style="font-family: 'Lato', Arial, sans-serif; font-size: 16px; color: #555; margin: 0; line-height: 1.6;"><strong>Jeden kredyt, wiele możliwości.</strong> Kredytem można spłacić wszystkie aktualne zobowiązania firmowe i prywatne. To oznacza jedną, niższą ratę, porządek w finansach i więcej pieniędzy w budżecie na bieżące potrzeby praktyki.</p>
-                                                </td>
-                                            </tr>
-                                        </table>
+            copyBtn.addEventListener('click', () => {
+                const htmlContent = emailWrapper.innerHTML;
+                const blob = new Blob([htmlContent], { type: 'text/html' });
+                const richTextInput = new ClipboardItem({ 'text/html': blob });
 
-                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" style="margin-bottom: 25px;">
-                                            <tr>
-                                                <td width="40" valign="top" style="padding-right: 15px;">
-                                                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMyOGE3NDUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMjIgMTEuMDhWMTJhMTAgMTAgMCAxIDEtNS45My04LjgxIj48L3BhdGg+PHBvbHlsaW5lIHBvaW50cz0iMjIgNCAxMiAxNC4wMSA5IDExLjAxIj48L3BvbHlsaW5lPjwvc3ZnPg==" alt="Checkmark" width="28" height="28">
-                                                </td>
-                                                <td valign="top">
-                                                    <p style="font-family: 'Lato', Arial, sans-serif; font-size: 16px; color: #555; margin: 0; line-height: 1.6;"><strong>Oszczędność najcenniejszego zasobu – czasu.</strong> Uproszczone procedury i minimum formalności na start oznaczają, że cały proces przebiega sprawnie, pozwalając w pełni skupić się na pacjentach i prowadzeniu praktyki, a nie na formalnościach bankowych.</p>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                        
-                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
-                                            <tr>
-                                                <td width="40" valign="top" style="padding-right: 15px;">
-                                                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMyOGE3NDUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMjIgMTEuMDhWMTJhMTAgMTAgMCAxIDEtNS45My04LjgxIj48L3BhdGg+PHBvbHlsaW5lIHBvaW50cz0iMjIgNCAxMiAxNC4wMSA5IDExLjAxIj48L3BvbHlsaW5lPjwvc3ZnPg==" alt="Checkmark" width="28" height="28">
-                                                </td>
-                                                <td valign="top">
-                                                    <p style="font-family: 'Lato', Arial, sans-serif; font-size: 16px; color: #555; margin: 0; line-height: 1.6;"><strong>Elastyczność na przyszłość.</strong> Wysoka dostępna kwota i długi okres finansowania dają swobodę. Można sfinansować bieżące potrzeby i w przyszłości łatwiej sięgnąć po dodatkowe środki na dalszy rozwój, bez przechodzenia przez cały proces od nowa.</p>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </table>
+                navigator.clipboard.write([richTextInput]).then(() => {
+                    copyBtn.textContent = 'Skopiowano!';
+                    copyBtn.classList.add('copied');
 
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" style="margin-bottom: 20px; border-bottom: 1px solid #e0e0e0; padding-bottom: 30px;">
-                                <tr>
-                                    <td>
-                                        <h2 style="font-family: 'Lato', Arial, sans-serif; font-size: 26px; color: #004d99; border-bottom: 2px solid #007bff; padding-bottom: 10px; margin: 0 0 25px 0; font-weight: 700;">Co Wyróżnia Naszą Ofertę?</h2>
-                                       
-                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" style="margin-bottom: 25px;">
-                                            <tr>
-                                                <td width="40" valign="top" style="padding-right: 15px;">
-                                                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMyOGE3NDUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMjIgMTEuMDhWMTJhMTAgMTAgMCAxIDEtNS45My04LjgxIj48L3BhdGg+PHBvbHlsaW5lIHBvaW50cz0iMjIgNCAxMiAxNC4wMSA5IDExLjAxIj48L3BvbHlsaW5lPjwvc3ZnPg==" alt="Checkmark" width="28" height="28">
-                                                </td>
-                                                <td valign="top">
-                                                    <h3 style="font-family: 'Lato', Arial, sans-serif; font-size: 18px; color: #0056b3; margin: 0 0 5px 0; font-weight: 700;">Minimum formalności</h3>
-                                                    <p style="font-family: 'Lato', Arial, sans-serif; font-size: 16px; color: #555; margin: 0; line-height: 1.6;">Nie wymagamy biznesplanów ani prognoz finansowych. Decyzja opiera się na dotychczasowych wynikach firmy.</p>
-                                                </td>
-                                            </tr>
-                                        </table>
+                    setTimeout(() => {
+                        copyBtn.textContent = 'Kopiuj treść maila';
+                        copyBtn.classList.remove('copied');
+                    }, 2000);
 
-                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" style="margin-bottom: 25px;">
-                                            <tr>
-                                                <td width="40" valign="top" style="padding-right: 15px;">
-                                                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMyOGE3NDUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMjIgMTEuMDhWMTJhMTAgMTAgMCAxIDEtNS45My04LjgxIj48L3BhdGg+PHBvbHlsaW5lIHBvaW50cz0iMjIgNCAxMiAxNC4wMSA5IDExLjAxIj48L3BvbHlsaW5lPjwvc3ZnPg==" alt="Checkmark" width="28" height="28">
-                                                </td>
-                                                <td valign="top">
-                                                     <h3 style="font-family: 'Lato', Arial, sans-serif; font-size: 18px; color: #0056b3; margin: 0 0 5px 0; font-weight: 700;">Konsolidacja zobowiązań prywatnych</h3>
-                                                     <p style="font-family: 'Lato', Arial, sans-serif; font-size: 16px; color: #555; margin: 0; line-height: 1.6;">Jako jeden z nielicznych produktów na rynku, nasz kredyt firmowy pozwala na spłatę prywatnych kredytów gotówkowych czy limitów w koncie, co porządkuje finanse i obniża miesięczne obciążenie.</p>
-                                                </td>
-                                            </tr>
-                                        </table>
+                }).catch(err => {
+                    console.error('Błąd kopiowania: ', err);
+                    copyBtn.textContent = 'Błąd!';
+                     setTimeout(() => {
+                        copyBtn.textContent = 'Kopiuj treść maila';
+                    }, 2000);
+                });
+            });
+        });
+    </script>
 
-                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
-                                            <tr>
-                                                <td width="40" valign="top" style="padding-right: 15px;">
-                                                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMyOGE3NDUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMjIgMTEuMDhWMTJhMTAgMTAgMCAxIDEtNS45My04LjgxIj48L3BhdGg+PHBvbHlsaW5lIHBvaW50cz0iMjIgNCAxMiAxNC4wMSA5IDExLjAxIj48L3BvbHlsaW5lPjwvc3ZnPg==" alt="Checkmark" width="28" height="28">
-                                                </td>
-                                                <td valign="top">
-                                                    <h3 style="font-family: 'Lato', Arial, sans-serif; font-size: 18px; color: #0056b3; margin: 0 0 5px 0; font-weight: 700;">Bezpłatna nadpłata i wcześniejsza spłata</h3>
-                                                    <p style="font-family: 'Lato', Arial, sans-serif; font-size: 16px; color: #555; margin: 0; line-height: 1.6;">Gwarantujemy możliwość bezpłatnej nadpłaty oraz całkowitej spłaty kredytu w dowolnym momencie. To kluczowy wyróżnik na tle większości kredytów firmowych, który daje Państwu pełną kontrolę nad finansami.</p>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </table>
-
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" style="margin-bottom: 20px;">
-                                <tr>
-                                    <td>
-                                        <h2 style="font-family: 'Lato', Arial, sans-serif; font-size: 26px; color: #004d99; border-bottom: 2px solid #007bff; padding-bottom: 10px; margin: 0 0 25px 0; font-weight: 700;">Uproszczone Formalności</h2>
-                                        <p style="font-family: 'Lato', Arial, sans-serif; font-size: 17px; color: #555; margin: 0 0 20px 0; line-height: 1.6;">
-                                            Aby rozpocząć proces, wystarczy przygotować podstawowe dokumenty.
-                                        </p>
-                                        <div style="background: #f8faff; border-left: 4px solid #007bff; padding: 20px; border-radius: 4px; font-size: 1em;">
-                                            <h3 style="font-family: 'Lato', Arial, sans-serif; font-size: 19px; color: #0056b3; margin: 0 0 15px 0; font-weight: 700;">Wymagane Dokumenty:</h3>
-                                            <ul style="padding-left: 20px; margin: 0; font-family: 'Lato', Arial, sans-serif; font-size: 16px; color: #555; line-height: 1.8;">
-                                                <li style="margin-bottom: 8px;">PIT za poprzedni rok.</li>
-                                                <li style="margin-bottom: 8px;">BIK prywatny oraz firmowy.</li>
-                                                <li style="margin-bottom: 8px;">Dokumenty finansowe bieżące (Ewidencja lub KPiR z rozliczonym ostatnim miesiącem).</li>
-                                                <li style="margin-bottom: 8px;">Zaświadczenia o niezaleganiu ZUS i US <em style="font-style: italic; color: #555;">(wymagane dopiero do podpisania umowy)</em>.</li>
-                                            </ul>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </table>
-
-                            <p style="font-family: 'Lato', Arial, sans-serif; font-size: 17px; color: #555; margin: 30px 0 0 0; line-height: 1.6;">
-                                W razie jakichkolwiek pytań lub wątpliwości, pozostajemy do Państwa pełnej dyspozycji.
-                            </p>
-                        </td>
-                    </tr>
-                </table>
-
-            </td>
-        </tr>
-    </table>
 </body>
 </html>
