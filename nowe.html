@@ -5,74 +5,153 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wymagane dokumenty do analizy kredytowej</title>
+
+    <style>
+        #helper-box {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 250px;
+            background-color: #fff0f0;
+            border: 1px solid #d9534f;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            font-family: Arial, sans-serif;
+            z-index: 1000;
+        }
+        #helper-box p {
+            margin: 0 0 15px 0;
+            color: #a94442;
+            font-size: 14px;
+            line-height: 1.5;
+            text-align: center;
+        }
+        #copyButton {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            outline: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        #copyButton:hover {
+            background-color: #0056b3;
+        }
+        #copyButton:active {
+            transform: scale(0.98);
+        }
+        #copyButton.copied {
+            background-color: #28a745; /* Zielony kolor po skopiowaniu */
+        }
+    </style>
 </head>
 <body style="margin: 0; padding: 0; background-color: #f4f7f9; font-family: 'Lato', Arial, sans-serif;">
-    <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" style="background-color: #f4f7f9;">
-        <tr>
-            <td align="center">
-                <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" style="max-width: 800px;">
-                    <tr>
-                        <td align="center" style="background-color: #002d5a; padding: 40px 20px;">
-                             <div style="font-family: 'Montserrat', sans-serif; text-align: center;">
-                                 <div style="font-size: 60px; font-weight: 700; color: #ffffff; position: relative; letter-spacing: -10px; line-height: 1;">
-                                     <span style="position: relative; z-index: 1;">B</span><span style="position: relative; z-index: 2;">A</span><span style="position: relative; z-index: 1;">F</span>
+
+    <div id="helper-box">
+        <p><strong>UWAGA!</strong><br>Kopiowana treść może się dublować. Pamiętaj, żeby usunąć powieloną treść po wklejeniu.</p>
+        <button id="copyButton">Kopiuj treść maila</button>
+    </div>
+
+    <div id="email-content-wrapper">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" style="background-color: #f4f7f9;">
+            <tr>
+                <td align="center">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" style="max-width: 800px;">
+                        <tr>
+                            <td align="center" style="background-color: #002d5a; padding: 40px 20px;">
+                                 <div style="font-family: 'Montserrat', sans-serif; text-align: center;">
+                                     <div style="font-size: 60px; font-weight: 700; color: #ffffff; position: relative; letter-spacing: -10px; line-height: 1;">
+                                         <span style="position: relative; z-index: 1;">B</span><span style="position: relative; z-index: 2;">A</span><span style="position: relative; z-index: 1;">F</span>
+                                     </div>
+                                     <div style="font-family: 'Roboto', sans-serif; font-size: 14px; color: #ffffff; letter-spacing: 1px; margin-top: 8px; text-align: center;">
+                                         BIURO ANALIZY FINANSOWEJ
+                                     </div>
                                  </div>
-                                 <div style="font-family: 'Roboto', sans-serif; font-size: 14px; color: #ffffff; letter-spacing: 1px; margin-top: 8px; text-align: center;">
-                                     BIURO ANALIZY FINANSOWEJ
-                                 </div>
-                             </div>
-                        </td>
-                    </tr>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background-color: #ffffff; padding: 40px 50px;">
+                                <h1 style="font-family: 'Lato', Arial, sans-serif; font-size: 28px; font-weight: 400; color: #002d5a; margin: 0 0 25px 0;">Dzień dobry,</h1>
+                                <p style="font-family: 'Lato', Arial, sans-serif; font-size: 17px; color: #555; margin: 0 0 35px 0; line-height: 1.6;">
+                                    w nawiązaniu do rozmowy na temat dodatkowych środków - poniżej przesyłam listę dokumentów potrzebnych do bezpłatnej analizy kredytowej.
+                                </p>
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" style="margin-bottom: 20px;">
+                                    <tr>
+                                        <td>
+                                            <div style="background: #f8faff; border-left: 4px solid #007bff; padding: 25px; border-radius: 4px; font-size: 1em;">
+                                                <h3 style="font-family: 'Lato', Arial, sans-serif; font-size: 19px; color: #0056b3; margin: 0 0 20px 0; font-weight: 700;">Dokumenty potrzebne do analizy kredytowej:</h3>
+                                                <ul style="padding-left: 20px; margin: 0; font-family: 'Lato', Arial, sans-serif; font-size: 16px; color: #555; line-height: 1.8;">
+                                                    <li style="margin-bottom: 10px;"><strong>PIT</strong> 2024,</li>
+                                                    <li style="margin-bottom: 10px;"><strong>KPiR</strong> za rok 2024 oraz bieżące miesiące 2025 roku,</li>
+                                                    <li style="margin-bottom: 10px;"><strong>Raport BIK</strong> prywatny oraz firmowy,</li>
+                                                    <li style="margin-bottom: 10px;"><strong>Ewidencja środków trwałych</strong> oraz <strong>tabele amortyzacji</strong> za poprzedni rok oraz rok bieżący,</li>
+                                                    <li style="margin-bottom: 10px;">Informacja o terminowości opłacania składek <strong>ZUS i US</strong> (na etapie analizy wystarczy sama informacja).</li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <p style="font-family: 'Lato', Arial, sans-serif; font-size: 17px; color: #555; margin: 30px 0 20px 0; line-height: 1.6;">
+                                    Zapewniamy finansowanie na warunkach niedostępnych dla klienta indywidualnego. Nasza przewaga to Państwa korzyść:
+                                </p>
+                                <ul style="padding-left: 20px; margin: 0 0 20px 0; font-family: 'Lato', Arial, sans-serif; font-size: 16px; color: #555; line-height: 1.8;">
+                                    <li style="margin-bottom: 15px; padding-left: 5px;">
+                                        <strong style="color: #0056b3;">Lepsze warunki cenowe:</strong> Działamy na szeroką skalę, współpracując z ponad 20 bankami. W Państwa imieniu negocjujemy marże i prowizje, co bezpośrednio obniża całkowity koszt kredytu.
+                                    </li>
+                                    <li style="margin-bottom: 15px; padding-left: 5px;">
+                                        <strong style="color: #0056b3;">Szybszy proces i wyższa skuteczność:</strong> Państwa wniosek trafia bezpośrednio do zaufanych doradców i osób decyzyjnych w bankach, z pominięciem standardowych kolejek. Gwarantuje to ekspresowe tempo i osobiste zaangażowanie po stronie banku.
+                                    </li>
+                                    <li style="padding-left: 5px;">
+                                        <strong style="color: #0056b3;">Indywidualne podejście:</strong> Nasze relacje pozwalają na elastyczność i zrozumienie dla Państwa unikalnej sytuacji, co jest kluczowe przy bardziej skomplikowanych transakcjach.
+                                    </li>
+                                </ul>
+                                <p style="font-family: 'Lato', Arial, sans-serif; font-size: 17px; color: #555; margin: 30px 0 0 0; line-height: 1.6;">
+                                    W razie pytań jestem do Państwa dyspozycji mailowo i pod telefonem.
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
 
-                    <tr>
-                        <td style="background-color: #ffffff; padding: 40px 50px;">
-                            <h1 style="font-family: 'Lato', Arial, sans-serif; font-size: 28px; font-weight: 400; color: #002d5a; margin: 0 0 25px 0;">Dzień dobry,</h1>
-                            <p style="font-family: 'Lato', Arial, sans-serif; font-size: 17px; color: #555; margin: 0 0 35px 0; line-height: 1.6;">
-                                w nawiązaniu do rozmowy na temat dodatkowych środków - poniżej przesyłam listę dokumentów potrzebnych do bezpłatnej analizy kredytowej.
-                            </p>
-                           
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" style="margin-bottom: 20px;">
-                                <tr>
-                                    <td>
-                                        <div style="background: #f8faff; border-left: 4px solid #007bff; padding: 25px; border-radius: 4px; font-size: 1em;">
-                                            <h3 style="font-family: 'Lato', Arial, sans-serif; font-size: 19px; color: #0056b3; margin: 0 0 20px 0; font-weight: 700;">Dokumenty potrzebne do analizy kredytowej:</h3>
-                                            <ul style="padding-left: 20px; margin: 0; font-family: 'Lato', Arial, sans-serif; font-size: 16px; color: #555; line-height: 1.8;">
-                                                <li style="margin-bottom: 10px;"><strong>PIT</strong> 2024,</li>
-                                                <li style="margin-bottom: 10px;"><strong>KPiR</strong> za rok 2024 oraz bieżące miesiące 2025 roku,</li>
-                                                <li style="margin-bottom: 10px;"><strong>Raport BIK</strong> prywatny oraz firmowy,</li>
-                                                <li style="margin-bottom: 10px;"><strong>Ewidencja środków trwałych</strong> oraz <strong>tabele amortyzacji</strong> za poprzedni rok oraz rok bieżący,</li>
-                                                <li style="margin-bottom: 10px;">Informacja o terminowości opłacania składek <strong>ZUS i US</strong> (na etapie analizy wystarczy sama informacja).</li>
-                                            </ul>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </table>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const copyBtn = document.getElementById('copyButton');
+            const emailWrapper = document.getElementById('email-content-wrapper');
 
-                            <p style="font-family: 'Lato', Arial, sans-serif; font-size: 17px; color: #555; margin: 30px 0 20px 0; line-height: 1.6;">
-                                Zapewniamy finansowanie na warunkach niedostępnych dla klienta indywidualnego. Nasza przewaga to Państwa korzyść:
-                            </p>
-                            
-                            <ul style="padding-left: 20px; margin: 0 0 20px 0; font-family: 'Lato', Arial, sans-serif; font-size: 16px; color: #555; line-height: 1.8;">
-                                <li style="margin-bottom: 15px; padding-left: 5px;">
-                                    <strong style="color: #0056b3;">Lepsze warunki cenowe:</strong> Działamy na szeroką skalę, współpracując z ponad 20 bankami. W Państwa imieniu negocjujemy marże i prowizje, co bezpośrednio obniża całkowity koszt kredytu.
-                                </li>
-                                <li style="margin-bottom: 15px; padding-left: 5px;">
-                                    <strong style="color: #0056b3;">Szybszy proces i wyższa skuteczność:</strong> Państwa wniosek trafia bezpośrednio do zaufanych doradców i osób decyzyjnych w bankach, z pominięciem standardowych kolejek. Gwarantuje to ekspresowe tempo i osobiste zaangażowanie po stronie banku.
-                                </li>
-                                <li style="padding-left: 5px;">
-                                    <strong style="color: #0056b3;">Indywidualne podejście:</strong> Nasze relacje pozwalają na elastyczność i zrozumienie dla Państwa unikalnej sytuacji, co jest kluczowe przy bardziej skomplikowanych transakcjach.
-                                </li>
-                            </ul>
+            copyBtn.addEventListener('click', () => {
+                const htmlContent = emailWrapper.innerHTML;
+                const blob = new Blob([htmlContent], { type: 'text/html' });
+                const richTextInput = new ClipboardItem({ 'text/html': blob });
 
-                            <p style="font-family: 'Lato', Arial, sans-serif; font-size: 17px; color: #555; margin: 30px 0 0 0; line-height: 1.6;">
-                                W razie pytań jestem do Państwa dyspozycji mailowo i pod telefonem.
-                            </p>
-                        </td>
-                    </tr>
-                </table>
+                navigator.clipboard.write([richTextInput]).then(() => {
+                    copyBtn.textContent = 'Skopiowano!';
+                    copyBtn.classList.add('copied');
 
-            </td>
-        </tr>
-    </table>
+                    setTimeout(() => {
+                        copyBtn.textContent = 'Kopiuj treść maila';
+                        copyBtn.classList.remove('copied');
+                    }, 2000);
+
+                }).catch(err => {
+                    console.error('Błąd kopiowania: ', err);
+                    copyBtn.textContent = 'Błąd!';
+                     setTimeout(() => {
+                        copyBtn.textContent = 'Kopiuj treść maila';
+                    }, 2000);
+                });
+            });
+        });
+    </script>
+
 </body>
 </html>
