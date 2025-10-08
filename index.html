@@ -124,7 +124,7 @@
         </div>
 
         <div class="info-container">
-            <div class="info-header">Aktualne Stawki Referencyjne</div>
+            <div class="info-header">Stawki Referencyjne</div>
             <div class="info-date" id="current-date-wibor">Ładowanie daty...</div>
             <div class="rates-grid">
                 <div class="rate-item">
@@ -160,18 +160,19 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const today = new Date();
-            const options = { year: 'numeric', month: 'long', day: 'numeric' };
-            const formattedDate = `Dane na dzień: ${today.toLocaleDateString('pl-PL', options)}`;
+            // --- Ustawienie daty na stałą wartość ---
+            const formattedDate = 'Dane na dzień: 08.10.2025';
             
             document.getElementById('current-date-wibor').textContent = formattedDate;
             document.getElementById('current-date-odsetki').textContent = formattedDate;
 
-            // Poniższe wartości zostaną podmienione przez automatyczny skrypt
-            document.getElementById('wibor-1m').textContent = '%%WIBOR_1M%%';
-            document.getElementById('wibor-3m').textContent = '%%WIBOR_3M%%';
-            document.getElementById('wibor-6m').textContent = '%%WIBOR_6M%%';
-            document.getElementById('odsetki-opoznienie').textContent = '%%ODSETKI_OPOZNIENIE%%';
+            // --- Ustawienie wartości WIBOR ---
+            document.getElementById('wibor-1m').textContent = '4,84%';
+            document.getElementById('wibor-3m').textContent = '4,69%';
+            document.getElementById('wibor-6m').textContent = '4,55%';
+
+            // --- Ustawienie wartości Odsetek Ustawowych za opóźnienie ---
+            document.getElementById('odsetki-opoznienie').textContent = '10,25%';
         });
     </script>
 </body>
