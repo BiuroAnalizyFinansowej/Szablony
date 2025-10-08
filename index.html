@@ -10,12 +10,9 @@
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
         body {
             font-family: 'Poppins', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
             background-color: #002d5a;
+            padding: 20px 0; /* Dodano padding dla lepszego wyglądu na mniejszych ekranach */
         }
         .menu-container {
             text-align: center;
@@ -25,6 +22,7 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.05);
             width: 90%;
             max-width: 500px;
+            margin: 40px auto; /* Zapewnia, że kontener jest na środku i ma margines od góry */
         }
         .logo img {
             max-width: 140px;
@@ -35,6 +33,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 15px;
+            margin-bottom: 30px; /* Dodano margines, by oddzielić od kafelków poniżej */
         }
         .menu-button {
             background-color: transparent;
@@ -59,21 +58,22 @@
             box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
         }
 
+        /* ZMNIEJSZONE KAFELKI INFORMACYJNE */
         .info-container {
             margin-bottom: 20px;
-            padding: 15px;
+            padding: 12px; /* Zmniejszono padding o ok. 25% */
             background-color: #f8f9fa;
             border-radius: 8px;
             border: 1px solid #e9ecef;
         }
         .info-header {
-            font-size: 14px;
+            font-size: 12px; /* Zmniejszono czcionkę */
             font-weight: 600;
             color: #495057;
             margin-bottom: 5px;
         }
         .info-date {
-            font-size: 12px;
+            font-size: 10px; /* Zmniejszono czcionkę */
             color: #6c757d;
             margin-bottom: 15px;
         }
@@ -88,7 +88,7 @@
         }
         .rate-item p {
             margin: 0;
-            font-size: 13px;
+            font-size: 11px; /* Zmniejszono czcionkę */
             color: #2c3e50;
             display: flex;
             align-items: center;
@@ -99,7 +99,7 @@
         }
         .rate-item .value {
             font-weight: 600;
-            font-size: 18px;
+            font-size: 15px; /* Zmniejszono czcionkę */
             color: #002d5a;
         }
         
@@ -108,17 +108,17 @@
         }
         .info-container-single .info-date {
             margin-bottom: 8px;
+            font-size: 10px; /* Zmniejszono czcionkę */
         }
         .info-container-single .value {
-            font-size: 18px; 
+            font-size: 15px;  /* Zmniejszono czcionkę */
             font-weight: 600;
             color: #002d5a;
             margin: 0;
         }
 
-        /* NOWY STYL DLA KOMUNIKATU */
         .disclaimer-text {
-            font-size: 10px;
+            font-size: 9px; /* Zmniejszono czcionkę */
             font-style: italic;
             color: #95a5a6;
             margin-top: 12px;
@@ -130,6 +130,15 @@
     <div class="menu-container">
         <div class="logo">
             <img src="baf_logo.png" alt="Logo BAF">
+        </div>
+
+        <div class="button-grid">
+            <a href="refinans.html" class="menu-button">Refinansowanie</a>
+            <a href="gdw.html" class="menu-button">Przygotowanie do wnioskowania</a>
+            <a href="skd.html" class="menu-button">Sankcja Kredytu Darmowego</a>
+            <a href="restru.html" class="menu-button">Restrukturyzacja</a>
+            <a href="nowe.html" class="menu-button">Nowe środki</a>
+            <a href="bos.html" class="menu-button">BOŚie opłaca Lekarzom</a>
         </div>
 
         <div class="info-container">
@@ -158,31 +167,19 @@
             <p class="value" id="odsetki-opoznienie">...</p>
             <p class="disclaimer-text">Dane przedstawiają wartości z podanego dnia i nie są aktualizowane automatycznie.</p>
         </div>
-
-        <div class="button-grid">
-            <a href="refinans.html" class="menu-button">Refinansowanie</a>
-            <a href="gdw.html" class="menu-button">Przygotowanie do wnioskowania</a>
-            <a href="skd.html" class="menu-button">Sankcja Kredytu Darmowego</a>
-            <a href="restru.html" class="menu-button">Restrukturyzacja</a>
-            <a href="nowe.html" class="menu-button">Nowe środki</a>
-            <a href="bos.html" class="menu-button">BOŚie opłaca Lekarzom</a>
-        </div>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // --- Ustawienie daty na stałą wartość ---
             const formattedDate = 'Dane na dzień: 08.10.2025';
             
             document.getElementById('current-date-wibor').textContent = formattedDate;
             document.getElementById('current-date-odsetki').textContent = formattedDate;
 
-            // --- Ustawienie wartości WIBOR ---
             document.getElementById('wibor-1m').textContent = '4,84%';
             document.getElementById('wibor-3m').textContent = '4,69%';
             document.getElementById('wibor-6m').textContent = '4,55%';
 
-            // --- Ustawienie wartości Odsetek Ustawowych za opóźnienie ---
             document.getElementById('odsetki-opoznienie').textContent = '10,25%';
         });
     </script>
