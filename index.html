@@ -15,28 +15,21 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            /* ZMIANA: Kolor tła został zaktualizowany */
             background-color: #002d5a;
         }
         .menu-container {
             text-align: center;
             background-color: #ffffff;
-            padding: 50px 40px;
+            padding: 40px;
             border-radius: 12px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.05);
             width: 90%;
             max-width: 500px;
         }
         .logo img {
-            max-width: 150px;
+            max-width: 140px;
             height: auto;
             margin-bottom: 25px;
-        }
-        h1 {
-            color: #2c3e50;
-            font-weight: 600;
-            margin-bottom: 35px;
-            font-size: 24px;
         }
         .button-grid {
             display: grid;
@@ -65,6 +58,64 @@
             transform: translateY(-3px);
             box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
         }
+
+        .info-container {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+        .info-header {
+            font-size: 14px;
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 5px;
+        }
+        .info-date {
+            font-size: 12px;
+            color: #6c757d;
+            margin-bottom: 15px;
+        }
+        .rates-grid {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+        }
+        .rate-item {
+            flex: 1;
+            padding: 0 5px;
+        }
+        .rate-item p {
+            margin: 0;
+            font-size: 13px;
+            color: #2c3e50;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .rate-item p:not(.value) {
+           margin-bottom: 4px;
+        }
+        .rate-item .value {
+            font-weight: 600;
+            font-size: 18px;
+            color: #002d5a;
+        }
+        
+        .info-container-single {
+            margin-bottom: 25px;
+        }
+        .info-container-single .info-date {
+            margin-bottom: 8px;
+        }
+        /* ZMIANA: Rozmiar czcionki ustawiony na taki sam jak przy WIBORze */
+        .info-container-single .value {
+            font-size: 18px; 
+            font-weight: 600;
+            color: #002d5a;
+            margin: 0;
+        }
     </style>
 </head>
 <body>
@@ -72,7 +123,32 @@
         <div class="logo">
             <img src="baf_logo.png" alt="Logo BAF">
         </div>
-        <h1>Szablony do wysyłania</h1>
+
+        <div class="info-container">
+            <div class="info-header">Aktualne Stawki Referencyjne</div>
+            <div class="info-date" id="current-date-wibor">Ładowanie daty...</div>
+            <div class="rates-grid">
+                <div class="rate-item">
+                    <p>WIBOR 1M</p>
+                    <p class="value" id="wibor-1m">...</p>
+                </div>
+                <div class="rate-item">
+                    <p>WIBOR 3M</p>
+                    <p class="value" id="wibor-3m">...</p>
+                </div>
+                <div class="rate-item">
+                    <p>WIBOR 6M</p>
+                    <p class="value" id="wibor-6m">...</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-container info-container-single">
+            <div class="info-header">Odsetki ustawowe za opóźnienie</div>
+            <div class="info-date" id="current-date-odsetki">Ładowanie daty...</div>
+            <p class="value" id="odsetki-opoznienie">...</p>
+        </div>
+
         <div class="button-grid">
             <a href="refinans.html" class="menu-button">Refinansowanie</a>
             <a href="gdw.html" class="menu-button">Przygotowanie do wnioskowania</a>
@@ -82,6 +158,25 @@
             <a href="bos.html" class="menu-button">BOŚie opłaca Lekarzom</a>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- Ustawienie aktualnej daty ---
+            const today = new Date();
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            const formattedDate = `Dane na dzień: ${today.toLocaleDateString('pl-PL', options)}`;
+            
+            document.getElementById('current-date-wibor').textContent = formattedDate;
+            document.getElementById('current-date-odsetki').textContent = formattedDate;
+
+            // --- Ustawienie wartości WIBOR ---
+            document.getElementById('wibor-1m').textContent = '4,84%';
+            document.getElementById('wibor-3m').textContent = '4,69%';
+            document.getElementById('wibor-6m').textContent = '4,55%';
+
+            // --- Ustawienie wartości Odsetek Ustawowych za opóźnienie ---
+            document.getElementById('odsetki-opoznienie').textContent = '10,25%';
+        });
+    </script>
 </body>
 </html>
-
